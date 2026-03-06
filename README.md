@@ -1,49 +1,83 @@
-# RAG Inside PDF: Resume AI Assistant
+# 🧠 BrainPDF: The World's First RAG-Native Resume
+> **Giving your resume a brain using Semantic Search & LLMs — right inside the PDF.**
 
-This repository contains a full RAG (Retrieval-Augmented Generation) pipeline embedded directly within a PDF document. It allows users to chat with a resume through a professional AI interface without leaving the PDF viewer.
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://vercel.com)
+[![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)](https://python.org)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## 🚀 Features
+Traditional resumes are static. **BrainPDF** makes them interactive. This project embeds a full Retrieval-Augmented Generation (RAG) pipeline inside a standard PDF, allowing recruiters to chat with your experience using a high-performance TF-IDF search engine and LLaMA 3.1.
 
-- **Semantic Search**: Pure JavaScript TF-IDF engine embedded in the PDF for fast, local context retrieval.
-- **Semantic Chunking**: Intelligent resume parsing that respects logical sections (Experience, Projects, Skills).
-- **Groq AI Integration**: Handshake between the PDF and LLaMA 3.1 via a Python proxy server.
-- **Premium UI**: Modern, dark-themed chat interface appended to the original resume.
-- **Cloud Ready**: Configured for easy deployment to Vercel.
+---
 
-## 📁 Repository Structure
+## 🕹️ Live Demo Architecture
 
-- `create_rag_pdf.py`: The PDF generator. It reads the resume, builds the index, and injects the JS/UI.
-- `proxy_server.py`: The backend proxy that handles Groq API communication and FDF response generation.
-- `requirements.txt`: Python dependencies for cloud/local environments.
-- `vercel.json`: Deployment configuration for Vercel.
-- `Naresh_Lahajal_resume.pdf`: The source resume used for testing.
+```mermaid
+graph TD
+    A[User PDF Viewer] -->|1. Type Question| B(Embedded JS Engine)
+    B -->|2. Local Semantic Search| C{Resume Chunks}
+    C -->|3. Best Context| B
+    B -->|4. HTTP POST| D[Vercel Cloud Proxy]
+    D -->|5. Augmented Prompt| E[Groq AI LLaMA 3.1]
+    E -->|6. AI Response| D
+    D -->|7. FDF Payload| A
+    A -->|8. Update UI| A
+```
 
-## 🛠️ Getting Started
+---
 
-### 1. Local Setup
-1. Install dependencies: `pip install flask flask-cors fitz pypdf python-dotenv`
-2. **Copy the environment template**: 
-   - Rename `.env.example` to `.env` or create a new `.env` file.
-3. Set your Groq API key in the `.env` file (`GROQ_API_KEY=your_key`).
-4. Run the proxy: `python proxy_server.py`
-5. Generate the interactive PDF: `python create_rag_pdf.py`
-6. Open `Interactive_Resume_Chat.pdf` in **Adobe Acrobat**.
+## � Features that feel like Magic
 
-### 2. Cloud Deployment (Vercel)
-1. Install Vercel CLI: `npm i -g vercel`
-2. Deploy the proxy: `vercel`
-3. **Important**: In the Vercel Dashboard, go to **Settings > Environment Variables** and add:
-   - Key: `GROQ_API_KEY`
-   - Value: `your_groq_api_key_here`
-4. Re-deploy or Restart the project on Vercel to pick up the key.
+### 🕵️ Local Semantic Search (No Latency)
+Equipped with a **Pure JavaScript TF-IDF Engine**. When a user types a query, the PDF performs a local vector-space similarity search across your resume chunks in milliseconds. No cloud required for retrieval.
 
-### 🌟 The Final Step: Connecting PDF to Cloud
-Once you have your Vercel URL (e.g. `https://my-rag-proxy.vercel.app`):
-1. Open `create_rag_pdf.py`.
-2. Find the line: `PROXY_URL = "http://localhost:3000/generate-rag-fdf"`
-3. Change it to: `PROXY_URL = "https://your-app.vercel.app/generate-rag-fdf"`
-4. Save and run `python create_rag_pdf.py` one last time.
-5. Now your PDF is "live" and works globally!
+### 🧩 Intelligent Semantic Chunking
+Unlike standard RAG that cuts text blindly, BrainPDF respects the **logical sections** of your resume (Experience, Projects, Education) to ensure the AI always receives coherent, high-value context.
+
+### 🎭 Premium Dark-Mode UI
+A bespoke, dark-themed interface appended to your original resume. Clean typography, real-time status updates, and a dedicated "Retrieved Chunks" debugger view.
+
+### ☁️ Cloud-Powered Intelligence
+Synchronized with **Groq AI** for lightning-fast inference. The backend is 100% serverless and ready for Vercel deployment.
+
+---
+
+## 🛠️ Global Setup in 60 Seconds
+
+### 1️⃣ Prepare the Engine (Local)
+```bash
+# Install the core
+pip install flask flask-cors fitz pypdf python-dotenv
+```
+- Rename `.env.example` to `.env`.
+- Paste your `GROQ_API_KEY` inside.
+- Run the heartbeat: `python proxy_server.py`.
+
+### 2️⃣ Forge the PDF
+```bash
+python create_rag_pdf.py
+```
+This generates `Interactive_Resume_Chat.pdf`. Open it in **Adobe Acrobat** for the full experience.
+
+---
+
+## 🚀 Deployment (Going Global)
+
+### Deploying the Proxy
+1. Install Vercel: `npm i -g vercel`.
+2. Run `vercel`.
+3. Add your `GROQ_API_KEY` to the Vercel Dashboard Environment Variables.
+
+### 🌟 The "Live" Handshake
+Once hosted, update the `PROXY_URL` in `create_rag_pdf.py` with your Vercel link:
+```python
+PROXY_URL = "https://your-live-app.vercel.app/generate-rag-fdf"
+```
+Regenerated the PDF, and it now works for anyone, anywhere, forever.
+
+---
+
+## 🛡️ Security
+This project uses `.env` patterns and GitHub push protection measures to ensure your API keys stay private. **Never upload your `.env` file.**
 
 ## 📄 License
-MIT
+MIT © 2026 Naresh Kumar Lahajal
