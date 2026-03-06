@@ -13,6 +13,36 @@ Traditional resumes are static. **BrainPDF** makes them interactive. This projec
 
 ---
 
+## 🛠️ Under the Hood: How it Works
+
+BrainPDF isn't just a PDF with a link; it's a self-contained intelligence system. 
+
+### 1. The Embedded TF-IDF Engine (Pure JS)
+The core "brain" is a custom-built **Term Frequency-Inverse Document Frequency (TF-IDF)** engine written in vanilla JavaScript and embedded directly into the PDF/SVG.
+- **Tokenization (`_tok`)**: Processes user input, removes stop words, and normalizes terms (e.g., "internship" -> "experience").
+- **Vectorization (`_qvec`)**: Converts the query into a numerical vector using pre-calculated Global IDF weights.
+- **Cosine Similarity (`_cos`)**: Compares the query vector against the document chunk vectors to find the most relevant context in milliseconds.
+
+### 2. Embedded JS Functions
+- `initRAG()`: Initializes the vocabulary and document vectors upon opening.
+- `getContext(query)`: The retrieval coordinator that triggers the search and returns context.
+- `handleChat()`: The communication bridge. It gathers context, builds the payload, and manages the network handshake.
+
+### 3. The "Hybrid" Evolution
+| Feature | Before (Local Only) | Added (Hosted Hybrid) |
+| :--- | :--- | :--- |
+| **Search** | 100% Local (TF-IDF) | 100% Local (TF-IDF) |
+| **Inference** | Requires Local Proxy | **Cloud-Scale (Vercel + Groq)** |
+| **Connectivity** | `localhost:3000` | `brain-pdf.vercel.app` |
+| **Portability** | Limited to dev machine | **Global (Any Adobe/SVG viewer)** |
+
+### 4. Smart Proxy Logic
+The `proxy_server.py` acts as a multi-protocol bridge:
+- **FDF Endpoint**: For Adobe Acrobat (returns `.fdf` payloads to update native PDF fields).
+- **JSON Endpoint**: For SVG/Web (returns standard JSON for modern web-based interaction).
+
+---
+
 ## 🕹️ Live Demo Architecture
 
 ```mermaid
