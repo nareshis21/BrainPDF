@@ -249,7 +249,7 @@
       dbg.style.display = "block";
 
       try {
-        const response = await fetch('http://localhost:3000/generate-rag-json', {
+        const response = await fetch('https://brain-pdf.vercel.app/generate-rag-json', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ prompt: q, context: ctx.text })

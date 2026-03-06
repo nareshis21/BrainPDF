@@ -235,7 +235,7 @@ try {
 # ═══════════════════════════════════════════════════════════════════════════
 # IMPORTANT: After deploying to Vercel, replace this link with your live URL!
 # e.g. PROXY_URL = "https://your-app.vercel.app/generate-rag-fdf"
-PROXY_URL = "http://localhost:3000/generate-rag-fdf" 
+PROXY_URL = "https://brain-pdf.vercel.app/generate-rag-fdf" 
 
 
 # ═══════════════════════════════════════════════════════════════════════════
