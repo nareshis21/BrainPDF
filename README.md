@@ -56,16 +56,23 @@ pip install flask flask-cors fitz pypdf python-dotenv
 ```bash
 python create_rag_pdf.py
 ```
-This generates `Interactive_Resume_Chat.pdf`. Open it in **Adobe Acrobat** for the full experience.
+This generates `Interactive_Resume_Chat.pdf`. 
+
+> [!IMPORTANT]
+> **Use Adobe Acrobat**: Due to strict security restrictions in browser-based PDF viewers (Chrome, Edge, Safari), the "Send" button logic will ONLY work correctly in **Adobe Acrobat**. Browser viewers often block the network requests used by the embedded JavaScript.
 
 ---
 
 ## 🚀 Deployment (Going Global)
 
-### Deploying the Proxy
+### Deploying the Python Proxy (Vercel)
+The backend is a **Flask (Python)** server configured for zero-config Vercel deployment.
 1. Install Vercel: `npm i -g vercel`.
 2. Run `vercel`.
-3. Add your `GROQ_API_KEY` to the Vercel Dashboard Environment Variables.
+3. **Important**: In the Vercel Dashboard, go to **Settings > Environment Variables** and add:
+   - Key: `GROQ_API_KEY`
+   - Value: `your_groq_api_key_here`
+4. Re-deploy or Restart the project on Vercel to pick up the key.
 
 ### 🌟 The "Live" Handshake
 Once hosted, update the `PROXY_URL` in `create_rag_pdf.py` with your Vercel link:
