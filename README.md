@@ -22,7 +22,8 @@ This repository contains a full RAG (Retrieval-Augmented Generation) pipeline em
 
 ### 1. Local Setup
 1. Install dependencies: `pip install flask flask-cors fitz pypdf python-dotenv`
-2. Create/Update a `.env` file in the same directory as `proxy_server.py`.
+2. **Copy the environment template**: 
+   - Rename `.env.example` to `.env` or create a new `.env` file.
 3. Set your Groq API key in the `.env` file (`GROQ_API_KEY=your_key`).
 4. Run the proxy: `python proxy_server.py`
 5. Generate the interactive PDF: `python create_rag_pdf.py`
