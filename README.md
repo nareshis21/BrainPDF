@@ -7,6 +7,10 @@
 
 Traditional resumes are static. **BrainPDF** makes them interactive. This project embeds a full Retrieval-Augmented Generation (RAG) pipeline inside a standard PDF, allowing recruiters to chat with your experience using a high-performance TF-IDF search engine and LLaMA 3.1.
 
+> [!CAUTION]
+> ### 🛑 CRITICAL: DO NOT USE BROWSER PDF VIEWERS
+> Due to strict security/CORS restrictions in **Chrome, Edge, and Safari**, the "Send" button logic will ONLY work correctly in **Adobe Acrobat Desktop**. Browser-based viewers block the cross-origin network requests required to talk to the AI proxy.
+
 ---
 
 ## 🕹️ Live Demo Architecture
@@ -56,23 +60,21 @@ pip install flask flask-cors fitz pypdf python-dotenv
 ```bash
 python create_rag_pdf.py
 ```
-This generates `Interactive_Resume_Chat.pdf`. 
-
-> [!IMPORTANT]
-> **Use Adobe Acrobat**: Due to strict security restrictions in browser-based PDF viewers (Chrome, Edge, Safari), the "Send" button logic will ONLY work correctly in **Adobe Acrobat**. Browser viewers often block the network requests used by the embedded JavaScript.
+This generates `Interactive_Resume_Chat.pdf`. Run this script every time you update your `PROXY_URL` or resume content.
 
 ---
 
 ## 🚀 Deployment (Going Global)
 
-### Deploying the Python Proxy (Vercel)
-The backend is a **Flask (Python)** server configured for zero-config Vercel deployment.
-1. Install Vercel: `npm i -g vercel`.
-2. Run `vercel`.
-3. **Important**: In the Vercel Dashboard, go to **Settings > Environment Variables** and add:
+The backend is a lightweight **Python (Flask)** proxy designed to securely handle your API keys and bridge the gap between the PDF's JavaScript and the LLM.
+
+### Vercel Serverless Hosting
+1. **Install Vercel CLI**: `npm i -g vercel` (This is just a tool to upload your Python code).
+2. **Deploy**: Run `vercel` from this folder.
+3. **Environment Secrets**: In the Vercel Dashboard, go to **Settings > Environment Variables** and add:
    - Key: `GROQ_API_KEY`
-   - Value: `your_groq_api_key_here`
-4. Re-deploy or Restart the project on Vercel to pick up the key.
+   - Value: `your_key_here`
+4. **Final Sync**: Once your app is live, update the `PROXY_URL` in `create_rag_pdf.py` as detailed below.
 
 ### 🌟 The "Live" Handshake
 Once hosted, update the `PROXY_URL` in `create_rag_pdf.py` with your Vercel link:
