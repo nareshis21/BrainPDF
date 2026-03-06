@@ -14,6 +14,10 @@ CORS(app) # Allow cross-origin requests from PDF browsers
 
 GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
 
+@app.route('/health', methods=['GET'])
+def health_check():
+    return {"status": "alive", "timestamp": datetime.now().isoformat()}, 200
+
 @app.route('/generate-fdf', methods=['POST'])
 def generate_fdf():
     """
