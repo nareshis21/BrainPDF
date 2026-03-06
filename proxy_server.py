@@ -205,6 +205,68 @@ trailer
 
     return Response(fdf_payload, mimetype='application/vnd.fdf')
 
+@app.route('/generate-rag-json', methods=['POST'])
+def generate_rag_json():
+    """
+    JSON-friendly RAG endpoint for SVGs and Web apps.
+    Expects POST with JSON: { "prompt": "...", "context": "..." }
+    """
+    data = request.json
+    if not data:
+        # Fallback for form-data if needed
+        data = request.form
+        if 'HiddenJSONData' in data:
+            import json
+            data = json.loads(data['HiddenJSONData'])
+
+    prompt = data.get("prompt", "")
+    context = data.get("context", "")
+
+    if not prompt:
+        return {"error": "No prompt provided"}, 400
+
+    groq_url = "https://api.groq.com/openai/v1/chat/completions"
+    
+    import urllib.request
+    import json
+    
+    system_prompt = (
+        "You are representing Naresh Kumar Lahajal. Answer questions based on his resume context. "
+        "Be professional, concise, and helpful. Use clear formatting.\n\n"
+        f"CONTEXT:\n{context}"
+    )
+    
+    payload = {
+        "model": "llama-3.1-8b-instant",
+        "messages": [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": prompt}
+        ]
+    }
+    
+    req = urllib.request.Request(
+        groq_url,
+        data=json.dumps(payload).encode('utf-8'),
+        headers={
+            "Authorization": f"Bearer {GROQ_API_KEY}",
+            "Content-Type": "application/json",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36"
+        }
+    )
+    
+    try:
+        with urllib.request.urlopen(req) as response:
+            res_data = json.loads(response.read().decode('utf-8'))
+            ai_reply = res_data['choices'][0]['message']['content']
+            return {"reply": ai_reply}, 200
+    except urllib.error.HTTPError as e:
+        error_body = e.read().decode('utf-8')
+        print(f"Groq API Error: {e.code} - {error_body}")
+        return {"error": f"Groq API {e.code}: {error_body}"}, e.code
+    except Exception as e:
+        print(f"Proxy Internal Error: {str(e)}")
+        return {"error": str(e)}, 500
+
 @app.route('/track-open', methods=['GET'])
 def track_open():
     """

@@ -1,0 +1,276 @@
+<svg width="100%" height="1550" viewBox="0 0 1180 1550" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&amp;display=swap');
+      .text-base { font-family: 'Outfit', sans-serif; }
+      .header-text { font-weight: 700; fill: #ffffff; letter-spacing: -0.5px; }
+      .section-title { font-weight: 700; fill: #0f172a; font-size: 16px; text-transform: uppercase; letter-spacing: 1.2px; }
+      .resume-body { fill: #334155; font-size: 11.5px; line-height: 1.5; }
+      .company-title { font-weight: 700; fill: #0f172a; font-size: 13.5px; }
+      .job-date { font-size: 11px; fill: #64748b; font-weight: 400; }
+      .project-title { font-weight: 700; fill: #0f172a; font-size: 12.5px; }
+      .chat-panel { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; padding: 20px; box-sizing: border-box; font-family: 'Outfit', sans-serif; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); max-height: 1350px; overflow-y: auto; display: flex; flex-direction: column; }
+      .input-box { width: 100%; border: 2px solid #e2e8f0; border-radius: 8px; padding: 12px; font-size: 14px; margin-bottom: 12px; background: #f8fafc; box-sizing: border-box; outline: none; transition: all 0.2s; font-family: inherit; }
+      .input-box:focus { border-color: #3b82f6; background: #fff; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1); }
+      .send-btn { background: #0f172a; color: white; border: none; border-radius: 8px; padding: 12px; font-weight: 600; cursor: pointer; transition: all 0.2s; width: 100%; font-size: 14px; }
+      .send-btn:hover { background: #1e293b; transform: translateY(-1px); }
+      .status-label { font-size: 11px; color: #64748b; margin-top: 8px; text-align: center; font-style: italic; }
+      .response-area { margin-top: 20px; padding: 18px; background: #f8fafc; border-radius: 10px; border-left: 5px solid #10b981; min-height: 50px; font-size: 14px; line-height: 1.6; color: #1e293b; box-shadow: inset 0 2px 4px 0 rgb(0 0 0 / 0.05); }
+      .chunks-area { margin-top: 15px; font-size: 11px; color: #64748b; background: #fefce8; padding: 12px; border-radius: 8px; border: 1px solid #fde68a; white-space: pre-wrap; max-height: 400px; overflow-y: auto; line-height: 1.5; border-left: 3px solid #fde68a; }
+      .loading-dots:after { content: '...'; animation: dots 1.5s infinite; }
+      @keyframes dots { 0%, 20% { content: ''; } 40% { content: '.'; } 60% { content: '..'; } 80%, 100% { content: '...'; } }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="100%" height="100%" fill="#f1f5f9" />
+  <rect x="0" y="0" width="100%" height="100" fill="url(#headerGrad)" />
+
+  <!-- Header -->
+  <text x="40" y="55" class="text-base header-text" font-size="34">Naresh Kumar Lahajal</text>
+  <text x="40" y="82" class="text-base" font-size="14" fill="#cbd5e1">AI / LLM Engineer • Bengaluru, India • +91 7975657928 • nareshlahajal@gmail.com</text>
+
+  <!-- Professional Container -->
+  <rect x="20" y="115" width="560" height="1415" rx="10" fill="#ffffff" />
+  
+  <g transform="translate(40, 150)">
+    <!-- Experience -->
+    <text y="0" class="text-base section-title">Professional Experience</text>
+    
+    <!-- Ramsoft -->
+    <text y="30" class="text-base company-title">RAMSOFT – AI / LLM Engineer Intern</text>
+    <text y="30" x="520" text-anchor="end" class="text-base job-date">June 2025 – Dec 2025</text>
+    <g transform="translate(0, 50)">
+      <circle cx="5" cy="0" r="2.5" fill="#3b82f6" />
+      <text x="18" y="4" class="text-base resume-body">Architected LLM automation agent using Claude for large-scale Cypress-to-Playwright migration.</text>
+      <text x="18" y="20" class="text-base resume-body" fill="#64748b" font-size="10.5">• Reduced manual engineering effort by 30–40%.</text>
+      
+      <circle cx="5" cy="38" r="2.5" fill="#3b82f6" />
+      <text x="18" y="42" class="text-base resume-body">Fine-tuned OpenAI Whisper for domain-specific medical transcription via supervised retraining.</text>
+      
+      <circle cx="5" cy="60" r="2.5" fill="#3b82f6" />
+      <text x="18" y="64" class="text-base resume-body">Designed sub-1.2s E2E low-latency inference pipelines balancing accuracy and efficiency.</text>
+      
+      <circle cx="5" cy="82" r="2.5" fill="#3b82f6" />
+      <text x="18" y="86" class="text-base resume-body">Built scalable Python data ingestion pipelines with SonarQube-verified code quality.</text>
+    </g>
+
+    <!-- Genpact -->
+    <text y="165" class="text-base company-title">GENPACT – Generative AI Engineer Intern</text>
+    <text y="165" x="520" text-anchor="end" class="text-base job-date">Feb 2024 – July 2024</text>
+    <g transform="translate(0, 185)">
+      <circle cx="5" cy="0" r="2.5" fill="#3b82f6" />
+      <text x="18" y="4" class="text-base resume-body">Designed RAG systems using LangChain, embedding models, and vector similarity search.</text>
+      
+      <circle cx="5" cy="22" r="2.5" fill="#3b82f6" />
+      <text x="18" y="26" class="text-base resume-body">Implemented LLM orchestration integrating OpenAI and Mistral models with tool augmentation.</text>
+      
+      <circle cx="5" cy="44" r="2.5" fill="#3b82f6" />
+      <text x="18" y="48" class="text-base resume-body">Developed AI PoCs for intelligent document understanding and semantic search workflows.</text>
+    </g>
+
+    <!-- Projects -->
+    <text y="265" class="text-base section-title">Key Projects</text>
+    
+    <text y="295" class="text-base project-title">TrueLarge-RT (Large-Scale LLM Edge Inference Research)</text>
+    <text y="315" class="text-base resume-body">Research on 70B parameter LLM inference on Android using GGUF and mmap loading.</text>
+    <text x="0" y="332" class="text-base" font-size="10" fill="#64748b" font-style="italic">Tech: Kotlin, C++, GGUF, Quantization, Edge AI</text>
+    
+    <text y="365" class="text-base project-title">EdgeMind (On-Device Agentic RAG Assistant)</text>
+    <text y="385" class="text-base resume-body">Engineered local RAG with NL control for Bluetooth, Settings, and System Actions.</text>
+    <text x="0" y="402" class="text-base" font-size="10" fill="#64748b" font-style="italic">Tech: Kotlin, Android Studio, HuggingFace, On-Device LLM</text>
+    
+    <text y="435" class="text-base project-title">Multimodal InsightFusion (Vision-Language RAG)</text>
+    <text y="455" class="text-base resume-body">Built cross-modal retrieval system integrating OpenCLIP with Mistral LLM.</text>
+
+    <!-- Expertise -->
+    <text y="505" class="text-base section-title">Technical Expertise</text>
+    <rect y="520" width="520" height="90" rx="8" fill="#f8fafc" stroke="#e2e8f0" />
+    <text y="540" x="15" class="text-base resume-body">
+      <tspan x="15" dy="0" font-weight="700" fill="#0f172a">Generative AI:</tspan> LLMs, RAG, Prompt Eng, Fine-Tuning, Multimodal AI
+      <tspan x="15" dy="20" font-weight="700" fill="#0f172a">Engineering:</tspan> Quantization (GGUF), Semantic Search, Vector DBs, Model Opt
+      <tspan x="15" dy="20" font-weight="700" fill="#0f172a">Languages:</tspan> Python, C++, Java, Kotlin, SQL, Shell, LangChain, HuggingFace
+      <tspan x="15" dy="20" font-weight="700" fill="#0f172a">Tools:</tspan> LangGraph, Git, Docker, Postman, VS Code, SonarQube
+    </text>
+
+    <!-- Education & More -->
+    <text y="640" class="text-base section-title">Education &amp; Credentials</text>
+    <text y="670" class="text-base" font-weight="700" fill="#0f172a">BMS College of Engineering, Bangalore</text>
+    <text y="688" class="text-base resume-body">Bachelor of Engineering in Information Science (2025) | CGPA: 7.7</text>
+    
+    <text y="718" class="text-base" font-weight="600" fill="#334155" font-size="11">PUBLICATIONS &amp; CERTIFICATIONS</text>
+    <text y="740" class="text-base resume-body">
+      <tspan x="0" dy="0">• arXiv: 2401.13613 - Study on Photo Search using CLIP Model.</tspan>
+      <tspan x="0" dy="20">• IBM Python for Data Science | Udemy Machine &amp; Deep Learning.</tspan>
+    </text>
+  </g>
+
+  <!-- Right Column: Interactive Chat Panel -->
+  <foreignObject x="600" y="115" width="560" height="1415">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="chat-panel">
+      <div style="font-weight:700; color:#0f172a; font-size:20px; margin-bottom:20px; display:flex; align-items:center; border-bottom: 2px solid #f1f5f9; padding-bottom: 15px;">
+        <div style="background:#0f172a; color:white; border-radius:10px; padding:6px 12px; font-size:14px; margin-right:12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);">AI</div>
+        Query Naresh's Career Brain
+      </div>
+      
+      <p style="font-size: 13px; color: #64748b; margin-top: 0; margin-bottom: 15px;">Ask about specific internship roles, projects like EdgeMind, or his technical expertise in RAG and LLMs.</p>
+
+      <input type="text" id="userInput" class="input-box" placeholder="e.g. Tell me about his work at Ramsoft..." onkeydown="if(event.key==='Enter')handleChat()" />
+      <button onclick="handleChat()" id="sendBtn" class="send-btn">Generate AI Insights</button>
+      <div id="status" class="status-label">Local Semantic Index Ready (TF-IDF Enabled)</div>
+
+      <div id="aiResponse" class="response-area" style="display:none;">
+        <div style="font-weight:700; font-size:12px; color:#10b981; margin-bottom:10px; text-transform:uppercase; letter-spacing:0.8px; display:flex; align-items:center;">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" style="margin-right:6px;"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+          Verified AI Response
+        </div>
+        <div id="responseText"></div>
+      </div>
+
+      <div id="debugging" style="display:none;">
+        <div style="font-size:12px; font-weight:700; color:#475569; margin-top:30px; margin-bottom:12px; display:flex; align-items:center;">
+          <svg width="14" height="14" viewBox="0 0 20 20" fill="currentColor" style="margin-right:6px;"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" /></svg>
+          RETRIEVED CONTEXT CHUNKS:
+        </div>
+        <div id="chunksArea" class="chunks-area"></div>
+      </div>
+    </div>
+  </foreignObject>
+
+  <script type="text/javascript"><![CDATA[
+    // --- COMPREHENSIVE RAG DATASET ---
+    const _chunks = [
+      {s:"EXPERIENCE: RAMSOFT", t:"At RAMSOFT (June-Dec 2025), Naresh was an AI/LLM Intern. He architected Claude agents for Cypress-to-Playwright migration (30-40% effort reduction). Fine-tuned Whisper for medical ASR, designed sub-1.2s E2E inference pipelines, and built Python data ingestion with SonarQube quality checks."},
+      {s:"EXPERIENCE: GENPACT", t:"At GENPACT (Feb-July 2024), Naresh worked as a GenAI Intern. He designed RAG systems using LangChain, embedding models, and vector search. Implemented LLM orchestration (OpenAI/Mistral), tool augmentation, and semantic search for document understanding."},
+      {s:"PROJECT: TRUELARGE-RT", t:"TrueLarge-RT: Systems research for 32B-70B parameter LLM inference on Android. Uses GGUF, mmap, and layer-streaming to bypass RAM limits on edge devices (Kotlin, C++, Quantization)."},
+      {s:"PROJECT: EDGEMIND", t:"EdgeMind: Fully on-device Agentic RAG assistant for Android. Features natural language control for system actions (Bluetooth, Settings, Settings) and local LLM execution for 100% privacy (Kotlin, HuggingFace)."},
+      {s:"PROJECT: INSIGHTFUSION", t:"Multimodal InsightFusion: Vision-Language RAG system integrating OpenCLIP embeddings with Mistral LLM for semantic image-to-text similarity search and contextual response generation."},
+      {s:"TECHNICAL EXPERTISE", t:"Naresh's core skills include Generative AI (RAG, LLMs, Fine-Tuning, Prompt Eng), Engineering (Quantization, GGUF, Semantic Search, Vector DBs), Programming (Python, C++, Kotlin, Java, SQL), and Tools (LangChain, HuggingFace, Docker, SonarQube)."},
+      {s:"EDUCATION & SUCCESS", t:"BE in Information Science from BMS College of Engineering (2025) with 7.7 CGPA. Research published on arXiv (2401.13613) regarding CLI P-based image retrieval. Certified by IBM and Udemy."}
+    ];
+
+    const _sw = {"me":1,"my":1,"about":1,"tell":1,"the":1,"is":1,"and":1,"to":1,"of":1,"in":1,"with":1,"for":1,"on":1,"by":1,"as":1,"at":1,"it":1};
+    let _vocab = {}, _idf = [], _vecs = [];
+
+    function initRAG() {
+      const df = {};
+      _chunks.forEach(c => {
+        const tokens = tokenize(c.t);
+        [...new Set(tokens)].forEach(t => df[t] = (df[t] || 0) + 1);
+      });
+      const v = Object.keys(df);
+      v.forEach((w, i) => _vocab[w] = i);
+      const n = _chunks.length;
+      _idf = v.map(w => Math.log(n / (1 + df[w])) + 1);
+      _chunks.forEach(c => {
+        const tf = {};
+        tokenize(c.t).forEach(t => tf[_vocab[t]] = (tf[_vocab[t]] || 0) + 1);
+        let normSq = 0, vec = [];
+        for (let idx in tf) {
+          let w = tf[idx] * _idf[idx];
+          vec.push([parseInt(idx), w]);
+          normSq += w * w;
+        }
+        let nrm = Math.sqrt(normSq) || 1;
+        _vecs.push(vec.map(p => [p[0], p[1] / nrm]));
+      });
+    }
+
+    function tokenize(s) { 
+      return s.toLowerCase()
+              .replace(/experience|exp|work|intern|role/g, "experience")
+              .replace(/projects?|research|built|made/g, "project")
+              .match(/[a-z0-9]+/g)
+              .filter(t => t.length > 1 && !_sw[t]); 
+    }
+
+    function cosine(qv, dv) {
+      let dot = 0;
+      dv.forEach(p => { if (qv[p[0]]) dot += qv[p[0]] * p[1]; });
+      return dot;
+    }
+
+    function getContext(q) {
+      const tokens = tokenize(q);
+      const tf = {};
+      tokens.forEach(t => { if (_vocab[t] !== undefined) tf[_vocab[t]] = (tf[_vocab[t]] || 0) + 1; });
+      let qv = {}, normSq = 0;
+      for (let idx in tf) {
+        let w = tf[idx] * _idf[idx];
+        qv[idx] = w;
+        normSq += w * w;
+      }
+      let nrm = Math.sqrt(normSq) || 1;
+      for (let k in qv) qv[k] /= nrm;
+      
+      const scores = _vecs.map((dv, i) => [i, cosine(qv, dv)]);
+      scores.sort((a,b) => b[1] - a[1]);
+      
+      const top = scores.slice(0, 3).filter(s => s[1] > 0.05 || s === scores[0]);
+      return { 
+        text: top.map(s => _chunks[s[0]].t).join("\n\n"),
+        debug: top.map(s => `[${_chunks[s[0]].s}] Match: ${(s[1]*100).toFixed(1)}%`).join("\n")
+      };
+    }
+
+    function renderMarkdown(md) {
+      if (!md) return "";
+      return md
+        .replace(/^### (.*$)/gim, '<strong style="color:#0f172a; display:block; margin-top:10px;">$1</strong>')
+        .replace(/^## (.*$)/gim, '<strong style="color:#0f172a; display:block; margin-top:10px;">$1</strong>')
+        .replace(/^# (.*$)/gim, '<strong style="color:#0f172a; display:block; margin-top:20px; font-size:1.1em;">$1</strong>')
+        .replace(/\*\*(.*)\*\*/gim, '<strong>$1</strong>')
+        .replace(/\*(.*)\*/gim, '<em>$1</em>')
+        .replace(/^\* (.*$)/gim, '<div style="margin-left:10px;">• $1</div>')
+        .replace(/^- (.*$)/gim, '<div style="margin-left:10px;">• $1</div>')
+        .replace(/\n\n/g, '<div style="height:10px;"></div>')
+        .replace(/\n/g, '<br/>');
+    }
+
+    async function handleChat() {
+      const input = document.getElementById('userInput');
+      const q = input.value;
+      if (!q.trim()) return;
+      
+      const status = document.getElementById('status');
+      const resPanel = document.getElementById('aiResponse');
+      const resText = document.getElementById('responseText');
+      const dbg = document.getElementById('debugging');
+      const chunksArea = document.getElementById('chunksArea');
+
+      status.innerHTML = '<span class="loading-dots" style="color:#3b82f6; font-weight:600;">Generating Insights</span>';
+      
+      const ctx = getContext(q);
+      chunksArea.innerText = ctx.debug + "\n\nRetrieved Context:\n" + ctx.text;
+      dbg.style.display = "block";
+
+      try {
+        const response = await fetch('http://localhost:3000/generate-rag-json', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt: q, context: ctx.text })
+        });
+
+        const data = await response.json();
+        if (data.reply) {
+          resText.innerHTML = renderMarkdown(data.reply);
+          resPanel.style.display = "block";
+          status.innerText = "Response Ready.";
+          input.value = "";
+        } else {
+          throw new Error(data.error || "Deep Intelligence unavailable");
+        }
+      } catch (e) {
+        status.innerText = "Signal Loss.";
+        resText.innerHTML = '<div style="color:#ef4444;"><strong>Error:</strong> ' + e.message + "</div>";
+        resPanel.style.display = "block";
+      }
+    }
+
+    initRAG();
+  ]]></script>
+</svg>
